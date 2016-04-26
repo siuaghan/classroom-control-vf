@@ -44,12 +44,5 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
 }
+exec "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
 
-# Change MOTD
-file { '/etc/motd':
-  ensure  => file,
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
-  content => "Puppet is Confusing!!!!\n",
-}
