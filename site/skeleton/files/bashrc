@@ -1,0 +1,6 @@
+#Source Global Defs
+if[ -f /etc/bashrc/ ];then
+  ./etc/bashrc
+fi
+
+cowsay  'Hi There from bashrc'
