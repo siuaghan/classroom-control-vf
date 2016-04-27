@@ -45,9 +45,9 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   
-  exec { "cowsay 'Welcome to Siuaghan' > /etc/motd" }
-    path    =>'/usr/bin:/usr/bin/local',
-    creates =>'/etc/motd',
+  #exec { "cowsay 'Welcome to Siuaghan' > /etc/motd" }
+  #  path    =>'/usr/bin:/usr/bin/local',
+  #  creates =>'/etc/motd',
   
   
 }
