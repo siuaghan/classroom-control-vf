@@ -54,7 +54,8 @@ node default {
     ip      =>  '127.0.0.1',
   }  
   
-include skeleton
-include users
+#include skeleton
+#include users
+include memcache
   
 }
