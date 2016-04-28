@@ -25,11 +25,12 @@ class nginx {
     notify  => Service['nginx'],
   }
   
- file { '/etc/nginx/conf.d/default.conf':
+  file { '/etc/nginx/conf.d/default.conf':
     source  => 'puppet:///modules/nginx/default.conf',
     notify  => Service['nginx'],
     require => Package['nginx'],
   }
+  
   service { 'nginx':
     ensure    => running,
     enable    => true,
