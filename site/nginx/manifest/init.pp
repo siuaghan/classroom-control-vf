@@ -1,5 +1,5 @@
 class nginx {
-  file {
+  File {
     owner =>  'root',
     group =>  'root',
     mode  =>  '0664',
