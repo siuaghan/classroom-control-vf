@@ -9,7 +9,6 @@ class nginx {
     ensure => present,
   }
   
-  
   file { ['/var/www', '/etc/nginx/conf.d']:
     ensure => directory,
   }
