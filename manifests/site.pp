@@ -64,5 +64,5 @@ include skeleton
 include users
 include memcached
 include nginx  
-
+include aliases
 }
