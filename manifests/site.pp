@@ -58,7 +58,10 @@ node default {
     ip      =>  '127.0.0.1',
   }  
   
-  
+  package { 'puppet-lint':
+  ensure   => '1.1.0',
+  provider => 'gem',
+  }
   
 include skeleton
 include users
