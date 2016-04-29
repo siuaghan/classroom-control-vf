@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   # notify { "Hello, my name is ${::hostname}": }
   
-  if $::$virtual != 'physical'  {
+  if $::virtual != 'physical'  {
       $vmname = capitilize($::virtual)
       notify {"This is a ${vmname} virtual machine.":}
     }
