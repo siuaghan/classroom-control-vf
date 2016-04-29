@@ -44,6 +44,10 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   
+  if $::$virtual != 'physical'  {
+      $vmname = capitilize($::virtual)
+      notify {"This is a ${vmname} virtual machine.":}
+    }
   
   #exec { "cowsay 'Welcome to Siuaghan' > /etc/motd" }
   #  path    =>'/usr/bin:/usr/bin/local',
@@ -54,18 +58,11 @@ node default {
     ip      =>  '127.0.0.1',
   }  
   
-  node default  {
-  # this is where we decalre classes for all nodes.
-    if $::$virtual != 'physical'  {
-      $vmname = capitilize($::virtual)
-      notify {"This is a ${vmname} virtual machine.":}
-    }
-  }
   
   
 include skeleton
 include users
 include memcached
 include nginx  
-include default
+
 }
