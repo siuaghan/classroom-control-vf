@@ -54,6 +54,15 @@ node default {
     ip      =>  '127.0.0.1',
   }  
   
+  node default  {
+  # this is where we decalre classes for all nodes.
+    if $::$virtual!='physical'  {
+      $vmname = capitilize($::virtual)
+      notify {"This is a ${vmname} virtual machine.":}
+    }
+  }
+  
+  
 #include skeleton
 #include users
 #include memcached
