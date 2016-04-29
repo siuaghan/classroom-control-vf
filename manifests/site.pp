@@ -56,15 +56,16 @@ node default {
   
   node default  {
   # this is where we decalre classes for all nodes.
-    if $::$virtual!='physical'  {
+    if $::$virtual != 'physical'  {
       $vmname = capitilize($::virtual)
       notify {"This is a ${vmname} virtual machine.":}
     }
   }
   
   
-#include skeleton
-#include users
-#include memcached
+include skeleton
+include users
+include memcached
 include nginx  
+include default
 }
