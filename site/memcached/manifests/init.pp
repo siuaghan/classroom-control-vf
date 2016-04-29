@@ -2,6 +2,10 @@ class memcached {
   package {'memcached':
     ensure  => present,
   }
+  package { 'puppet-lint':
+    ensure   => '1.1.0',
+    provider => 'gem',
+  }
   
   file  { '/etc/sysconfig/memcached':
     ensure  => file,
@@ -11,7 +15,6 @@ class memcached {
     source  =>  'puppet:///modules/memcached/memcached',
     require =>  Package['memcached'],
   }
-  
   
   service { 'memcached':
     ensure  =>  running,
